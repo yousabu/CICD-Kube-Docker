@@ -78,8 +78,6 @@ pipeline {
         stage('Kubernetes Deploy'){
             agent {label 'KOPS'}
                 steps{
-                    sh "git clone  https://github.com/yousabu/CICD-Kube-Docker.git"
-                    sh "cd CICD-Kube-Docker"
                     sh "helm install  --namespace prod vprofile-stack helm/vprofiecharts --set appimage=youssefabu/vproappdock"
                 }
         }
