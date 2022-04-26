@@ -80,7 +80,7 @@ pipeline {
                 steps{
                     sh "git clone  https://github.com/yousabu/CICD-Kube-Docker.git"
                     sh "cd CICD-Kube-Docker"
-                    sh "helm upgrade --install --force vprofile-stack helm/vprofilecharts --set appimage=${registry}:V${BUILD_NUMBER} --namespace prod"
+                    sh "helm install  --namespace prod vprofile-stack helm/vprofiecharts --set appimage=youssefabu/vproappdock"
                 }
         }
 
